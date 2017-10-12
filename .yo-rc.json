@@ -1,0 +1,39 @@
+{
+  "generator-cat": {
+    "promptValues": {
+      "authorName": "HsuTing",
+      "authorEmail": "hsuting0106@gmail.com",
+      "authorUrl": "http://hsuting.com",
+      "private": false,
+      "website": true,
+      "chooseType": "server",
+      "graphql": true,
+      "plugins": [],
+      "subject": "ERP",
+      "otherSettings": [],
+      "db": true
+    },
+    "plugins": [
+      "server",
+      "graphql",
+      "react",
+      "relay"
+    ],
+    "alias": {
+      "public": "public",
+      "components": "components",
+      "componentsShare": "components/share",
+      "constants": "constants",
+      "containers": "containers",
+      "routers": "routers",
+      "schemas": "schemas",
+      "utils": "utils"
+    },
+    "template": {
+      "subject": "ERP",
+      "url": "https://hsuting.github.io/erp/",
+      "otherSettings": []
+    },
+    "cat": true
+  }
+}

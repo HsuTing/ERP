@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "react",
+    "env",
+    "stage-0"
+  ],
+  "plugins": [
+    "relay",
+    "transform-decorators-legacy",
+    "transform-object-assign",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "public": "public",
+        "components": "components",
+        "componentsShare": "components/share",
+        "constants": "constants",
+        "containers": "containers",
+        "routers": "routers",
+        "schemas": "schemas",
+        "utils": "utils"
+      }
+    }]
+  ]
+}
