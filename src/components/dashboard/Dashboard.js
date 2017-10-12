@@ -9,10 +9,10 @@ import Wrapper from 'cat-components/lib/wrapper';
 import Sidebar, {sidebarBuilder} from 'cat-components/lib/sidebar';
 
 import Normalize from 'componentsShare/Normalize';
+import pages from 'constants/pages/dashboard';
 
 import Menu from './Menu';
 import * as style from './style/dashboard';
-import pages from './../temp/dashboard';
 
 @withRouter
 @sidebarBuilder

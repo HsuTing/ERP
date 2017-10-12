@@ -10,6 +10,7 @@ const src = './src/public';
 module.exports = {
   entry: {
     login: path.resolve(src, './login.js'),
+    dashboard: path.resolve(src, './dashboard.js'),
     common: [
       'react-relay',
       'radium',

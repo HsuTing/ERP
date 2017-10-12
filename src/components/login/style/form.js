@@ -1,7 +1,6 @@
 'use strict';
 
 import radium from 'radium';
-import red from 'cat-components/lib/color/red';
 
 export const root = {
   animation: 'x 0.5s ease-in-out',
@@ -21,16 +20,6 @@ export const root = {
 
 export const inputRoot = {
   margin: '10px 0px'
-};
-
-export const title = {
-  margin: '5px 0px'
-};
-
-export const error = {
-  margin: '5px 0px',
-  fontSize: '12px',
-  color: red
 };
 
 export const buttonRoot = {

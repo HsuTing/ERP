@@ -7,8 +7,9 @@ import {Route} from 'react-router-dom';
 import Img from 'cat-components/lib/img';
 import Link from 'cat-components/lib/link';
 
+import pages from 'constants/pages/dashboard';
+
 import * as style from './style/menu';
-import pages from './../temp/dashboard';
 
 @radium
 export default class Menu extends React.Component {
