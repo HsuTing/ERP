@@ -9,7 +9,7 @@ const src = './src/public';
 
 module.exports = {
   entry: {
-    index: path.resolve(src, './index.js'),
+    login: path.resolve(src, './login.js'),
     common: [
       'react-relay',
       'radium',
