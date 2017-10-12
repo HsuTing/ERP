@@ -5,6 +5,6 @@ node_modules
 coverage
 lib
 *.log
-public
+public/js
 schema.graphql
 __generated__
