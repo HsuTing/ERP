@@ -1,4 +1,4 @@
-# Erp [![Build Status][travis-image]][travis-url] 
+# ERP [![Build Status][travis-image]][travis-url] 
 Enterprise Resource Planning
 
 ## Getting Started
@@ -20,5 +20,5 @@ yarn install && yarn build
 ## License
 MIT © [HsuTing](http://hsuting.com)
 
-[travis-image]: https://travis-ci.org/HsuTing/erp.svg?branch=master
-[travis-url]: https://travis-ci.org/HsuTing/erp
+[travis-image]: https://travis-ci.org/HsuTing/ERP.svg?branch=master
+[travis-url]: https://travis-ci.org/HsuTing/ERP
