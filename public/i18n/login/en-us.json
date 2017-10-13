@@ -1,0 +1,17 @@
+{
+  "submit": "submit",
+  "cancel": "cancel",
+  "register": "register",
+  "email": "email",
+  "password": "password",
+  "password_again": "password again",
+  "name": "name",
+  "errorMessage": {
+    "empty": "This field can be empty",
+    "notEmail": "This is not an email type",
+    "lengthIsNotOver": "The lenght of this field must be over",
+    "notHaveNumber": "This field needs to have at least one number",
+    "notHaveLetter": "This field needs to have at least one letter",
+    "notSamePassword": "Password again must be same as Password"
+  }
+}

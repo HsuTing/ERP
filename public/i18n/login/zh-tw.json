@@ -1,0 +1,17 @@
+{
+  "submit": "送出",
+  "cancel": "取消",
+  "register": "註冊",
+  "email": "信箱",
+  "password": "密碼",
+  "password_again": "再輸入一次密碼",
+  "name": "姓名",
+  "errorMessage": {
+    "empty": "不可空白",
+    "notEmail": "非信箱格式",
+    "lengthIsNotOver": "此欄位長度必須超過",
+    "notHaveNumber": "此欄位必須含有至少一個數字",
+    "notHaveLetter": "此欄位必須含有至少一個字母",
+    "notSamePassword": "兩組密碼必須相同"
+  }
+}

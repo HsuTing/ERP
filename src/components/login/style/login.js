@@ -23,3 +23,8 @@ export const content = {
 export const iconRoot = {
   textAlign: 'center'
 };
+
+export const changeLanguage = {
+  margin: '30px auto 0px',
+  textAlign: 'center'
+};

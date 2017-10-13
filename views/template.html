@@ -64,6 +64,8 @@
     {% else -%}
     var data = null;
     {% endif -%}
+    var lang = '{{ lang }}';
+    var langData = {{ langData | safe }};
   </script>
 
   {% if ENV -%}

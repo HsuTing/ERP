@@ -12,5 +12,5 @@ export const ErrorMessage = ({isError, error}) => ( // eslint-disable-line react
   !isError ?
     null :
     <p style={style.errorMessage}
-    >{error.join(' ,')}</p>
+    >{error.join(', ')}</p>
 );

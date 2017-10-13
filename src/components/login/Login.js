@@ -5,8 +5,10 @@ import radium, {StyleRoot} from 'radium';
 import {Switch, Route} from 'react-router-dom';
 import Wrapper from 'cat-components/lib/wrapper';
 import Icon from 'cat-components/lib/icon';
+import I18n from 'cat-components/lib/i18n';
 
 import Normalize from 'componentsShare/Normalize';
+import ChangeLanguage from 'componentsShare/ChangeLanguage';
 import pages from 'constants/pages/login';
 
 import Form from './Form';
@@ -28,7 +30,14 @@ class Login extends React.Component {
             {pages.map(({path, type}, pageIndex) => (
               <Route key={pageIndex}
                 path={path}
-                component={() => <Form type={type} />}
+                component={() => [
+                  <Form key='form'
+                    type={type}
+                  />,
+                  <ChangeLanguage key='change-language'
+                    style={style.changeLanguage}
+                  />
+                ]}
                 exact
               />
             ))}
@@ -42,7 +51,7 @@ class Login extends React.Component {
 }
 
 /* eslint-disable react/display-name, react/prop-types */
-export default ({radiumConfig, redux, router}) => (
+export default ({radiumConfig, redux, router, i18n}) => (
   <Wrapper radiumConfig={radiumConfig}
     redux={redux}
     router={router}
@@ -55,7 +64,11 @@ export default ({radiumConfig, redux, router}) => (
     <div>
       <Normalize />
 
-      <Login />
+      <I18n {...i18n}
+        basename='/public/i18n/login/'
+      >
+        <Login />
+      </I18n>
     </div>
   </Wrapper>
 );
