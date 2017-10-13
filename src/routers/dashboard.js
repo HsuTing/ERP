@@ -13,18 +13,30 @@ const ENV = process.env.NODE_ENV === 'production';
 const router = koaRouter({prefix: '/dashboard'}).loadMethods();
 
 pages.forEach(({path}) => {
-  router.get(path, (ctx, next) => reactRender(
-    <Dashboard
-      router={{
-        isServer: true,
-        location: ctx.request.url,
-        context: {}
-      }}
-    />, {
-      js: 'dashboard',
-      ENV
-    }
-  )(ctx, next));
+  router.get(path, (ctx, next) => {
+    const lang = ctx.cookies.get('lang') || 'en-us';
+    const langData = require(`./../../public/i18n/dashboard/${lang}.json`);
+    const router = {
+      isServer: true,
+      location: ctx.request.url,
+      context: {}
+    };
+    const i18n = {
+      lang,
+      defaultData: langData
+    };
+
+    return reactRender(
+      <Dashboard router={router}
+        i18n={i18n}
+      />, {
+        js: 'dashboard',
+        ENV,
+        lang,
+        langData: JSON.stringify(langData)
+      }
+    )(ctx, next);
+  });
 });
 
 export default router;

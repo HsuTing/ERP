@@ -44,6 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bundle-loader": "^0.5.5",
     "callsite": "^1.0.0",
     "cat-components": "^1.9.1",
     "cat-graphql": "^0.2.5",

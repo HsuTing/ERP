@@ -6,26 +6,35 @@ import radium, {StyleRoot} from 'radium';
 import {Route} from 'react-router-dom';
 import Img from 'cat-components/lib/img';
 import Link from 'cat-components/lib/link';
+import {language} from 'cat-components/lib/i18n';
 
 import pages from 'constants/pages/dashboard';
 
 import * as style from './style/menu';
 
+@language
 @radium
 export default class Menu extends React.Component {
   static propTypes = {
     img: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     style: PropTypes.object,
-    hide: PropTypes.func
+    hide: PropTypes.func,
+    translate: PropTypes.object.isRequired
   }
 
   static defaultProps = {
     hide: () => {}
   }
 
+  shouldComponentUpdate(nextProps) {
+    return (
+      JSON.stringify(this.props.translate) !== JSON.stringify(nextProps.translate)
+    );
+  }
+
   render() {
-    const {img, email, hide, ...props} = this.props;
+    const {img, email, hide, translate, ...props} = this.props;
 
     return (
       <StyleRoot style={[style.root, props.style]}>
@@ -44,7 +53,7 @@ export default class Menu extends React.Component {
         </div>
 
         <div style={style.linkRoot}>
-          {pages.map(({title, path}, index) => (
+          {pages.map(({name, path}, index) => (
             <Route key={index}
               path={path}
               exact
@@ -53,7 +62,7 @@ export default class Menu extends React.Component {
                 <Link style={style.link(match)}
                   to={path}
                   onClick={() => hide()}
-                >{title}</Link>
+                >{translate[name]}</Link>
               )}
             </Route>
           ))}

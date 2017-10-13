@@ -1,6 +1,6 @@
 'use strict';
 
 export default [{
-  title: 'Home',
+  name: 'home',
   path: '/'
 }];
