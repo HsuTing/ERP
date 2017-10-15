@@ -16,28 +16,27 @@ export default class ChangeLanguage extends React.Component {
     changeLanguage: PropTypes.func.isRequired
   }
 
+  constructor(props) {
+    super(props);
+    this.changeLanguage = this.changeLanguage.bind(this);
+  }
+
   componentDidMount() {
     if(cookie.get('lang'))
       cookie.set('lang', cookie.get('lang'), {expires: 365});
   }
 
   render() {
-    const {changeLanguage, ...props} = this.props;
+    const {...props} = this.props;
 
     return (
       <div style={[style.root, props.style]}>
-        {[{
+        {[{ 
           name: 'English',
-          changeLanguage: () => {
-            cookie.set('lang', 'en-us', {expires: 365});
-            changeLanguage('en-us')();
-          }
+          changeLanguage: this.changeLanguage('en-us')
         }, {
           name: '中文',
-          changeLanguage: () => {
-            cookie.set('lang', 'zh-tw', {expires: 365});
-            changeLanguage('zh-tw')();
-          }
+          changeLanguage: this.changeLanguage('zh-tw')
         }].map(({name, changeLanguage}, textIndex) => ([
           textIndex === 0 ? null : <div style={style.line} />,
           <div key={textIndex}
@@ -47,5 +46,17 @@ export default class ChangeLanguage extends React.Component {
         ]))}
       </div>
     );
+  }
+
+  changeLanguage(lang) {
+    const {changeLanguage} = this.props;
+
+    return () => {
+      if(cookie.get('lang') === lang)
+        return;
+
+      cookie.set('lang', lang, {expires: 365});
+      changeLanguage(lang)();
+    };
   }
 }
