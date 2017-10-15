@@ -93,6 +93,13 @@ class Dashboard extends React.Component {
           load(require('./../Home'));
         break;
 
+      case 'info':
+        /* istanbul ignore next */
+        loadFunction = process.env.NODE_ENV === 'production' && process.env.TYPE === 'client' ?
+          require('bundle-loader?lazy&name=info!./../info/Info') :
+          load(require('./../info/Info'));
+        break;
+
       /* istanbul ignore next */
       default:
         throw new Error(`"${name}" is not defined.`);
@@ -117,7 +124,9 @@ export default ({radiumConfig, router, i18n}) => (
     }}
   >
     <I18n {...i18n}
-      basename='/public/i18n/dashboard/'
+      basename={`${
+        process.env.NODE_ENV === 'test' ? 'http://localhost:8000' : /* istanbul ignore next */ ''
+      }/public/i18n/dashboard/`}
     >
       <div>
         <Normalize />

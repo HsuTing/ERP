@@ -27,12 +27,6 @@ export default class Menu extends React.Component {
     hide: () => {}
   }
 
-  shouldComponentUpdate(nextProps) {
-    return (
-      JSON.stringify(this.props.translate) !== JSON.stringify(nextProps.translate)
-    );
-  }
-
   render() {
     const {img, email, hide, translate, ...props} = this.props;
 

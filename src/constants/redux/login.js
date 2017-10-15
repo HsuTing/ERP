@@ -6,7 +6,7 @@ import {formReducer} from 'cat-components/lib/input-redux';
 
 const middleware = (
   process.env.NODE_ENV === 'production' ?
-    {} : {
+    /* istanbul ignore next */ {} : {
       enhancer: createLogger({collapsed: true})
     }
 );

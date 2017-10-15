@@ -21,10 +21,6 @@ export default class ChangeLanguage extends React.Component {
       cookie.set('lang', cookie.get('lang'), {expires: 365});
   }
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render() {
     const {changeLanguage, ...props} = this.props;
 

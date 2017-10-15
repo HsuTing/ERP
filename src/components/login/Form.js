@@ -58,7 +58,7 @@ export default class Field extends React.Component {
                 }]))}
                 value={value || ''}
                 onChange={data => inputDispatch(name, data)}
-                onKeyDown={inputEnter(this.submit)}
+                onKeyPress={inputEnter(this.submit)}
               />
 
               <ErrorMessage isError={isError}

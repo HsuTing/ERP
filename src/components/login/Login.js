@@ -65,7 +65,9 @@ export default ({radiumConfig, redux, router, i18n}) => (
       <Normalize />
 
       <I18n {...i18n}
-        basename='/public/i18n/login/'
+        basename={`${
+          process.env.NODE_ENV === 'test' ? 'http://localhost:8000' : /* istanbul ignore next */ ''
+        }/public/i18n/login/`}
       >
         <Login />
       </I18n>

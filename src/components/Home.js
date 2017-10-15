@@ -16,12 +16,6 @@ export default class Home extends React.Component {
     translate: PropTypes.object.isRequired
   }
 
-  shouldComponentUpdate(nextProps) {
-    return (
-      JSON.stringify(this.props.translate) !== JSON.stringify(nextProps.translate)
-    );
-  }
-
   render() {
     const {translate} = this.props;
 

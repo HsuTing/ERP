@@ -9,7 +9,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.js',
     '!**/public/**',
-    '!**/node_modules/**'
+    '!**/node_modules/**',
+    '!__tests__/**/utils/**'
   ],
   coverageDirectory: 'coverage',
   coverageReporters: [

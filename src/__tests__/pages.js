@@ -2,9 +2,8 @@
 
 import fetch from 'fetch-everywhere';
 
-const pages = [{
-  path: '/'
-}];
+import loginPages from 'constants/pages/login';
+import dashboardPages from 'constants/pages/dashboard';
 
 describe('pages', () => {
   let server = null;
@@ -12,7 +11,9 @@ describe('pages', () => {
     server = require('./../server').default;
   });
 
-  pages.forEach(({path}) => {
+  [].concat(loginPages)
+    .concat(dashboardPages.map(({path}) => ({path: `/dashboard${path}`})))
+    .forEach(({path}) => {
     it(path, () => expect(
       fetch(`http://localhost:8000${path}`)
         .then(res => res.status)
